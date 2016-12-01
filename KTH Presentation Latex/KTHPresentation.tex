@@ -1,0 +1,106 @@
+\documentclass[t]{beamer}
+
+
+% Appearance:
+
+\usetheme{KTHprofile}
+\usefonttheme[onlylarge]{structurebold}
+
+
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}
+
+% Author, Title, etc.
+
+%\title{}
+
+\title[Inisintiur sequi aliquia tis dis in para] 
+{%
+  Inisintiur sequi aliquia tis dis in para earcien non et excepell%
+}
+
+%\author{}
+
+\author[Oskar, Friends]
+{
+Oskar \and
+And~Friends
+}
+
+%\author[Dude, Friends]
+%{
+%The~Dude\inst{1} \and
+%And~Friends\inst{2}
+%}
+
+\institute{}
+
+%\institute[KTH Royal Institute of Technology]
+%{\inst{1} KTH Royal Institute of Technology, Sweden\and
+%\vskip-4mm
+%\inst{2} KTH Royal Institute of Technology, Sweden
+%}
+
+\date{}
+%\date{\today}
+
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Example of a Title: Lorem ipsum dolor sit amet}
+\framesubtitle{Subtitle example}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit\footnote{Footnotes are set to endnotes}, sed do eiusmod tempor incididunt\footnote{And they appear here} ut labore et dolore magna aliqua.\footnote{Maximum three lines}
+
+\begin{itemize}
+\item Lorem ipsum dolor
+\item Lorem ipsum dolor
+\begin{itemize}
+\item Sub item
+\end{itemize}
+\item Lorem ipsum dolor
+\item Lorem ipsum dolor
+\end{itemize}
+
+
+\footnoteblock{}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Example of a Title: Another version of the lorem ipsum dolor sit amet, consectetur adipisicing elit}
+
+\lipsum[2]\footnote{One more footnote test which is really long to test the length \\ of the footnote area as well as the line breaking}
+
+\footnoteblock{}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Lorem ipsum dolor sit amet}
+
+\lipsum[4]
+
+\begin{figure}[h!]
+\includegraphics[trim=0mm 80mm 0mm 0mm, width=0.3\paperwidth]{KTHfooterlines_CMYK.eps}
+\caption{Image test}
+\end{figure}
+
+
+\end{frame}
+
+\end{document}

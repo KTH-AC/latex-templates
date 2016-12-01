@@ -1,0 +1,171 @@
+\mode<presentation>
+
+%\setbeamertemplate{background}{	
+
+%}
+\setbeamersize{text margin left=10.5ex}
+
+
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+  
+%\renewcommand\itemize[1]{
+%\textcolor{blue}{#1}  
+%  \setlength{\itemsep}{1pt}
+%  \setlength{\parskip}{0pt}
+%  \setlength{\parsep}{0pt}  
+%  }
+
+
+\defbeamertemplate{itemize item}{KTHprofile}{-}{
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}  
+  \usebeamercolor{itemize item}\small%\hbox{\textbullet}
+}
+
+\defbeamertemplate{itemize subitem}{KTHprofile}{-}{\usebeamercolor{itemize item}\footnotesize%\hbox{\textbullet}
+}
+\defbeamertemplate{itemize subsubitem}{KTHprofile}{-}{\usebeamercolor{itemize item}\footnotesize%\hbox{\textbullet}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\footnote=\endnote
+
+%\usepackage[hang]{footmisc}
+\usepackage[absolute,overlay]{textpos}
+
+\newcommand{\footnoteblock}[1]{%
+  \begin{textblock*}{90mm}(20mm,89mm)%
+
+	\textcolor{white}{\noindent\theendnotes}%
+
+  \end{textblock*}%
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title page
+\defbeamertemplate*{title page}{KTHprofile}[1][]
+%\defbeamertemplate*{title page}{KTHprofile}
+{ 	
+	\vspace{5mm}
+
+    \begin{beamercolorbox}[wd=0.7\paperwidth,leftskip=0.01\paperwidth,rightskip=0.05\paperwidth,sep=0pt,#1]{title page header}
+    \usebeamerfont{title}\linespread{0.5}\inserttitle%
+    \end{beamercolorbox}%
+	
+    \begin{beamercolorbox}[wd=0.8\paperwidth,leftskip=0.01\paperwidth,rightskip=0.05\paperwidth,sep=0pt,#1]{author}
+    \hspace{0.5mm}\usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+	
+    \begin{beamercolorbox}[wd=0.8\paperwidth,leftskip=0.01\paperwidth,rightskip=0.05\paperwidth,sep=0pt,#1]{institute}
+    \usebeamerfont{institute}\insertinstitute%
+    \end{beamercolorbox}
+	
+    \begin{beamercolorbox}[wd=0.8\paperwidth,leftskip=0.01\paperwidth,rightskip=0.05\paperwidth,sep=0pt,#1]{date}
+    \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+}
+
+
+\defbeamertemplate*{frametitle}{KTHprofile}
+{
+%\vspace{-4mm}
+%\begin{beamercolorbox}[left]{frame title}%
+%    \insertframetitle\\\usebeamercolor{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle%
+%  \end{beamercolorbox}%
+    
+\usebeamerfont{framesubtitle}\insertframesubtitle
+}
+
+
+
+\defbeamertemplate*{headline}{KTHprofile}
+{%
+	    \ifnum \insertpagenumber=1
+		
+		\begin{beamercolorbox}[wd=\paperwidth,leftskip=3mm,sep=0pt]{logo page header}
+		\begin{tabular}[t]{p{0.72\paperwidth} p{0.18\paperwidth}}
+	        \vspace{3mm}
+		    \includegraphics[width=11mm]{kth_cmyk_logo.eps}
+		    & 
+			\vspace{3mm}
+		    \pbox{25mm}{\uppercase{\bfseries\fontsize{2mm}{1em}\selectfont KTH Royal Institute \\ of Technology}} \\
+		\end{tabular}
+		\end{beamercolorbox}%
+		
+		 \else
+%	\begin{tabular}{p{0.09\paperwidth} p{0.7\paperwidth}}
+%	    \vspace{2mm}
+%		\hspace{2mm} 
+%	    \includegraphics[width=9mm]{kth_cmyk_logo.eps}
+%	    & 
+%		\vspace{2mm}
+%		\usebeamerfont{frametitle}\insertframetitle
+%	\end{tabular}
+
+
+%	\begin{tabularx}{\paperwidth}{p{0.09\paperwidth} p{0.7\paperwidth}}
+	
+%	\multicolumn{1}{b{10mm}}
+%	{
+%	    \vspace{2mm}
+%		\hspace{2mm} 
+%	    \includegraphics[trim=0mm 0mm 0mm 0mm,width=9mm]{kth_cmyk_logo.eps}
+%		}
+%	    & 
+%		\vspace{2mm}
+%		\usebeamerfont{frametitle}\insertframetitle
+		
+%	\end{tabularx}
+
+
+	\begin{tabular}{p{0.09\paperwidth} b{0.7\paperwidth}}
+%	    \vspace{2mm}
+		\hspace{2mm} 
+	    \includegraphics[width=9mm]{kth_cmyk_logo.eps}
+	    & 
+%		\vspace{2mm}
+		\usebeamerfont{frametitle}\insertframetitle
+	\end{tabular}
+
+
+	
+	\fi
+}
+
+
+
+\defbeamertemplate*{footline}{KTHprofilefooter}
+{
+    \ifnum \insertpagenumber=1
+     \begin{beamercolorbox}[wd=\paperwidth]{lineblock}
+     \includegraphics[trim=170mm 0mm 0mm 0mm, width=1.55\paperwidth]{KTHfooterlines_CMYK.eps}
+     \end{beamercolorbox}%
+	 
+	 
+    \else
+	
+	\begin{beamercolorbox}[wd=0.6\paperwidth,ht=10mm,left]{footer image}%
+		\includegraphics[trim=205mm 5mm 0mm 0mm, width=1.5\paperwidth]{KTHplatta_CMYK.eps}
+	\end{beamercolorbox}%
+	
+    \begin{textblock*}{30mm}(115mm,89mm)%
+  	\textcolor{white}{\small \insertframenumber /\inserttotalframenumber}%\hfill
+  	\end{textblock*}%
+	
+	\vskip0pt%
+    \fi
+}
+
+
+
+\makeatother
+
+
+\mode<all>
